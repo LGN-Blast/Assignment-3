@@ -54,11 +54,13 @@
             // 
             // richTextBox1
             // 
+            this.richTextBox1.BackColor = System.Drawing.Color.White;
+            this.richTextBox1.ForeColor = System.Drawing.Color.Black;
             this.richTextBox1.Location = new System.Drawing.Point(7, 20);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(168, 31);
             this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "SYRO";
+            this.richTextBox1.Text = "";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // Homepage

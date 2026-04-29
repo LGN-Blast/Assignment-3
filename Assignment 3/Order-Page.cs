@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace Assignment_3
 {
-    public partial class Inventory : UserControl
+    public partial class Order_Page : UserControl
     {
-        public Inventory()
+        public Order_Page()
         {
             InitializeComponent();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }

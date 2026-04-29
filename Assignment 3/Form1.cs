@@ -22,6 +22,8 @@ namespace Assignment_3
 
         }
 
+
+
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -29,7 +31,7 @@ namespace Assignment_3
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            ShowScreen(new Inventory());
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -38,6 +40,24 @@ namespace Assignment_3
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void ShowScreen(UserControl newScreen)
+        {
+            foreach (Control ctrl in panel2.Controls)
+            {
+                ctrl.Dispose();
+            }
+
+
+            panel2.Controls.Clear();
+            newScreen.Dock = DockStyle.Fill;
+            panel2.Controls.Add(newScreen);
+        }
+        private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }
