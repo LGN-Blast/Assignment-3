@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Assignment_3
 {
-    public partial class Homepage : UserControl
+    public partial class Dashboard : UserControl
     {
-        public Homepage()
+        public Dashboard()
         {
             InitializeComponent();
         }
@@ -33,6 +33,11 @@ namespace Assignment_3
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }

@@ -26,7 +26,7 @@ namespace Assignment_3
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            ShowScreen(new Dashboard());
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -58,6 +58,16 @@ namespace Assignment_3
             panel2.Controls.Add(newScreen);
         }
         private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ShowScreen(new Checkout());
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
         {
 
         }
