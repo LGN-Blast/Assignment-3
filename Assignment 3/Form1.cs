@@ -62,12 +62,17 @@ namespace Assignment_3
 
         private void button3_Click(object sender, EventArgs e)
         {
-            ShowScreen(new Checkout());
+            
         }
 
         private void label1_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            ShowScreen(new Checkout());
         }
     }
 }
