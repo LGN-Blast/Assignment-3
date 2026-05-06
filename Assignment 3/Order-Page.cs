@@ -31,5 +31,10 @@ namespace Assignment_3
         {
 
         }
+
+        private void btn_lord_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

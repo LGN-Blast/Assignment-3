@@ -115,6 +115,7 @@
             this.btn_lord.TabIndex = 7;
             this.btn_lord.Text = "Load Order";
             this.btn_lord.UseVisualStyleBackColor = true;
+            this.btn_lord.Click += new System.EventHandler(this.btn_lord_Click);
             // 
             // label2
             // 

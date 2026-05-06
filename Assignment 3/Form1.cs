@@ -74,5 +74,10 @@ namespace Assignment_3
         {
             ShowScreen(new Checkout());
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ShowScreen(new Order_Page());
+        }
     }
 }
