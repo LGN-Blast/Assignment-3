@@ -59,6 +59,7 @@
             this.dgv_corders.Name = "dgv_corders";
             this.dgv_corders.Size = new System.Drawing.Size(678, 483);
             this.dgv_corders.TabIndex = 1;
+            this.dgv_corders.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_corders_CellContentClick);
             // 
             // label1
             // 
