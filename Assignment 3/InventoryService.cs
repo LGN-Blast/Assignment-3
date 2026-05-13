@@ -13,7 +13,7 @@ namespace Assignment_3
         {
             List<Product> products = new List<Product>();
 
-            if (File.Exists(filepath)) return products;
+            if (!File.Exists(filepath)) return products;
 
             var lines = File.ReadAllLines(filepath).Skip(1);
 
