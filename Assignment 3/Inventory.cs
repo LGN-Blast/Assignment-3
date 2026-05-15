@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace Assignment_3
 {
@@ -37,7 +38,7 @@ namespace Assignment_3
         {
             if (!ValidateInputs()) return;
 
-            int newId = _inventoryList.Count + 1000;
+            int newId = _inventorylist.Count + 1000;
             string name = Namebox.Text;
             string brand = Brandbox.Text;
             decimal price = decimal.Parse(Pricebox.Text);
@@ -75,15 +76,53 @@ namespace Assignment_3
         }
         private void ClearFields()
         {
-            txtID.Clear();
+            IDBox.Clear();
             Namebox.Clear();
             Brandbox.Clear();
             Pricebox.Clear();
             Quantitybox.Clear();
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (!int.TryParse(IDBox.Text, out int idToUpdate))
+            {
+                MessageBox.Show("Please select a product from the grid to update.");
+                return;
+            }
+            var productToUpdate = _inventorylist.FirstOrDefault(p => p.ProductID == idToUpdate);
+
+            if (productToUpdate != null)
+            {
+                if (ValidateInputs())
+                {
+                    productToUpdate.ProductName = Namebox.Text;
+                    productToUpdate.ProductBrand = Brandbox.Text;
+                    productToUpdate.ProductPrice = decimal.Parse(Pricebox.Text);
+                    productToUpdate.ProductQuantity = int.Parse(Quantitybox.Text);
+
+                    _bindingSource.ResetBindings(false);
+                    dataGridView1.Refresh();
+
+                    ClearFields();
+                    MessageBox.Show("Product updated successfully in the list.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Product ID not found in inventory.");
+            }
+
+
+
+
+        }
+
+
+
+
     }
-}
+   }
 
 
 
