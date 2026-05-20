@@ -118,8 +118,54 @@ namespace Assignment_3
 
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string path = filepath;
 
+                List<Product> listToSave = _inventorylist.ToList();
 
+                InventoryService.SaveToCSV(path, listToSave);
+
+                MessageBox.Show("Changes Saved Succesfully");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error Saving Data: " + ex.Message);
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string searchTerm = DeleteBox.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(searchTerm))
+            {
+                MessageBox.Show("Please Enter a Product ID or Name to Delete");
+                return;
+            }
+
+            Product productToDelete = _inventorylist.FirstOrDefault(p =>
+            p.ProductID.ToString() == searchTerm ||
+            p.ProductName.Equals(searchTerm, StringComparison.OrdinalIgnoreCase));
+
+            if (productToDelete != null)
+            {
+                DialogResult result = MessageBox.Show($"Are you sure you want to delete {productToDelete.ProductName}?", "Confirm Delete", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    _inventorylist.Remove(productToDelete);
+                    DeleteBox.Clear();
+                    MessageBox.Show("Product deleted succesfully");
+                }
+            }
+            else
+            {
+                MessageBox.Show("No product found matching  that ID or Name.");
+            }
+        }
 
     }
    }
