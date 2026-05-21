@@ -15,6 +15,8 @@ namespace Assignment_3
         public Login()
         {
             InitializeComponent();
+
+            Passbox.UseSystemPasswordChar = true;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -29,9 +31,33 @@ namespace Assignment_3
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string Username = Userbox.Text;
-            string Password = Passbox.Text;
+            string username = Userbox.Text.Trim();
+            string password = Passbox.Text;
 
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("Please enter your username and password.", "SYRO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return;
+            }
+
+            if (UserService.Login(username, password))
+            {
+                MessageBox.Show($"Welcome,{username}");
+
+                Form1 dashboard = new Form1();
+
+                dashboard.Show();
+
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Invalid Username or Password.");
+
+                Passbox.Clear();
+                Passbox.Focus();
+            }
         }
     }
 }
