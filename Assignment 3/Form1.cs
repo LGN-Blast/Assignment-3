@@ -17,17 +17,6 @@ namespace Assignment_3
             InitializeComponent();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
         private void ShowScreen(UserControl newScreen)
         {
             foreach (Control ctrl in panel2.Controls)
@@ -40,30 +29,6 @@ namespace Assignment_3
             newScreen.Dock = DockStyle.Fill;
             panel2.Controls.Add(newScreen);
         }
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            ShowScreen(new Checkout());
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            ShowScreen(new Order_Page());
-        }
 
         private void btnDash_Click(object sender, EventArgs e)
         {
@@ -73,6 +38,82 @@ namespace Assignment_3
         private void btnInventory_Click(object sender, EventArgs e)
         {
             ShowScreen(new Inventory());
+        }
+
+        private void btnCheckout_Click(object sender, EventArgs e)
+        {
+            ShowScreen(new Checkout());
+        }
+
+        private void btnOrder_Click(object sender, EventArgs e)
+        {
+            ShowScreen(new Order_Page());
+        }
+
+        private void btnDash_MouseEnter(object sender, EventArgs e)
+        {
+            btnDash.BackColor = Color.Gainsboro;
+        }
+
+        private void btnDash_MouseLeave(object sender, EventArgs e)
+        {
+            btnDash.BackColor = Color.White;
+        }
+
+        private void btnInventory_MouseEnter(object sender, EventArgs e)
+        {
+            btnInventory.BackColor = Color.Gainsboro;
+        }
+
+        private void btnInventory_MouseLeave(object sender, EventArgs e)
+        {
+            btnInventory.BackColor = Color.White;
+        }
+
+        private void btnOrder_MouseEnter(object sender, EventArgs e)
+        {
+            btnOrder.BackColor = Color.Gainsboro;
+        }
+
+        private void btnOrder_MouseLeave(object sender, EventArgs e)
+        {
+            btnOrder.BackColor = Color.White;
+        }
+
+        private void btnSetting_MouseEnter(object sender, EventArgs e)
+        {
+            btnSetting.BackColor = Color.Gainsboro;
+        }
+
+        private void btnSetting_MouseLeave(object sender, EventArgs e)
+        {
+            btnSetting.BackColor = Color.White;
+        }
+
+        private void btnLogout_MouseEnter(object sender, EventArgs e)
+        {
+            btnLogout.BackColor = Color.Red;
+        }
+
+        private void btnLogout_MouseLeave(object sender, EventArgs e)
+        {
+            btnLogout.BackColor = Color.White;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+           ShowScreen(new Dashboard());
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you wish to logout?", "SYRO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
+
         }
     }
 }

@@ -191,6 +191,10 @@ namespace Assignment_3
 
             dgvInventory.DataSource = filteredList;
         }
+        public DataGridView InventoryGrid
+        {
+            get { return dgvInventory; }
+        }
     }
 
 }

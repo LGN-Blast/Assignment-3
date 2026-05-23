@@ -17,29 +17,49 @@ namespace Assignment_3
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void dashTimer_Tick(object sender, EventArgs e)
         {
-
+            lblTime.Text = DateTime.Now.ToString("hh:mm:ss tt");
+            lblDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Dashboard_Load(object sender, EventArgs e)
         {
+            dashTimer.Start();
+            UpdateDashboard();
 
+            lblTime.Text = DateTime.Now.ToString("hh:mm:ss tt");
+            lblDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void UpdateDashboard()
         {
+            int totalInventory = 0;
+            int lowStockAlerts = 0;
 
-        }
+            Inventory inventory = new Inventory();
+            inventory.Refresh();
 
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
+            foreach(DataGridViewRow row in inventory.InventoryGrid.Rows)
+            {
+                if (row.Cells["Quantity"].Value !=null)
+                {
+                    int productQuantity;
 
-        }
+                    if (int.TryParse(row.Cells["Quantity"].Value.ToString(), out productQuantity))
+                    {
+                        totalInventory += productQuantity;
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
+                        if (productQuantity < 10)
+                        {
+                            lowStockAlerts++;
+                        }
+                    }
+                }
+            }
 
+            lblTotalInventory.Text = totalInventory.ToString();
+            lblLowStock.Text = lowStockAlerts.ToString();
         }
     }
 }
