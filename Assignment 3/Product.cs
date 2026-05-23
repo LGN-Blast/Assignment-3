@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Assignment_3
 {
-   internal class Product
+    internal class Product
     {
         public int ProductID { get; set; }
         public string ProductName { get; set; }

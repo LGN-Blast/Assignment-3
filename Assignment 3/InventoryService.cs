@@ -7,19 +7,21 @@ using System.Threading.Tasks;
 
 namespace Assignment_3
 {
-    internal static class InventoryService
+    internal class InventoryService
     {
-        public static List<Product> LoadFromCSV(string filepath)
+        public static List<Product> LoadFromCSV(string filePath)
         {
             List<Product> products = new List<Product>();
 
-            if (!File.Exists(filepath)) return products;
+            if (!File.Exists(filePath)) return products;
 
-            var lines = File.ReadAllLines(filepath).Skip(1);
+            var lines = File.ReadAllLines(filePath).Skip(1);
 
             foreach (string line in lines)
             {
                 string[] parts = line.Split(',');
+
+
                 if (parts.Length >= 4)
                 {
                     try
@@ -32,7 +34,10 @@ namespace Assignment_3
 
                         products.Add(new Product(id, name, brand, price, quantity));
                     }
-                    catch { }
+                    catch
+                    {
+
+                    }
                 }
             }
             return products;
@@ -45,7 +50,7 @@ namespace Assignment_3
 
                 foreach (var p in products)
                 {
-                    string line = $"{p.ProductID}, {p.ProductName}, {p.ProductPrice}, {p.ProductBrand}, {p.ProductQuantity}";
+                    string line = $"{p.ProductID},{p.ProductName},{p.ProductBrand},{p.ProductPrice * 100},{p.ProductQuantity}";
                     writer.WriteLine(line);
                 }
             }

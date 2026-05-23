@@ -19,16 +19,6 @@ namespace Assignment_3
             Passbox.UseSystemPasswordChar = true;
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             string username = Userbox.Text.Trim();
@@ -43,7 +33,7 @@ namespace Assignment_3
 
             if (UserService.Login(username, password))
             {
-                MessageBox.Show($"Welcome,{username}");
+                MessageBox.Show($"Welcome, {username}");
 
                 Form1 dashboard = new Form1();
 

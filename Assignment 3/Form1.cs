@@ -17,21 +17,6 @@ namespace Assignment_3
             InitializeComponent();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            ShowScreen(new Dashboard());
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            ShowScreen(new Inventory());
-        }
-
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
@@ -62,7 +47,7 @@ namespace Assignment_3
 
         private void button3_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void label1_Click_1(object sender, EventArgs e)
@@ -78,6 +63,16 @@ namespace Assignment_3
         private void button4_Click(object sender, EventArgs e)
         {
             ShowScreen(new Order_Page());
+        }
+
+        private void btnDash_Click(object sender, EventArgs e)
+        {
+           ShowScreen(new Dashboard());
+        }
+
+        private void btnInventory_Click(object sender, EventArgs e)
+        {
+            ShowScreen(new Inventory());
         }
     }
 }
