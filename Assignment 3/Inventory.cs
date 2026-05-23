@@ -52,6 +52,19 @@ namespace Assignment_3
             ClearFields();
         }
 
+        private void Inventory_Load(object sender, EventArgs e)
+        {
+            var tempData = InventoryService.LoadFromCSV(filepath);
+            _inventorylist.Clear();
+
+            foreach (var item in tempData)
+            {
+                _inventorylist.Add(item);
+            }
+
+            dgvInventory.DataSource = _inventorylist;
+        }
+
         private bool ValidateInputs()
         {
             if (!Regex.IsMatch(Namebox.Text, @"^[a-zA-Z0-9 ]+$"))
@@ -96,10 +109,10 @@ namespace Assignment_3
             {
                 if (ValidateInputs())
                 {
-                    productToUpdate.ProductName = Namebox.Text;
-                    productToUpdate.ProductBrand = Brandbox.Text;
-                    productToUpdate.ProductPrice = decimal.Parse(Pricebox.Text);
-                    productToUpdate.ProductQuantity = int.Parse(Quantitybox.Text);
+                    productToUpdate.ProductName = txtName.Text;
+                    productToUpdate.ProductBrand = txtBrand.Text;
+                    productToUpdate.ProductPrice = decimal.Parse(txtPrice.Text);
+                    productToUpdate.ProductQuantity = int.Parse(txtQuantity.Text);
 
                     _bindingSource.ResetBindings(false);
                     dataGridView1.Refresh();
@@ -112,13 +125,9 @@ namespace Assignment_3
             {
                 MessageBox.Show("Product ID not found in inventory.");
             }
-
-
-
-
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
             try
             {
