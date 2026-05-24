@@ -31,7 +31,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnSetting = new System.Windows.Forms.Button();
             this.btnCheckout = new System.Windows.Forms.Button();
             this.btnOrder = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -46,9 +45,8 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.btnLogout);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.btnSetting);
+            this.panel1.Controls.Add(this.btnLogout);
             this.panel1.Controls.Add(this.btnCheckout);
             this.panel1.Controls.Add(this.btnOrder);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -67,7 +65,7 @@
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.Red;
-            this.btnLogout.Location = new System.Drawing.Point(16, 610);
+            this.btnLogout.Location = new System.Drawing.Point(16, 553);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(160, 40);
@@ -89,21 +87,6 @@
             this.label1.TabIndex = 4;
             this.label1.Text = " SYRO";
             // 
-            // btnSetting
-            // 
-            this.btnSetting.BackColor = System.Drawing.Color.White;
-            this.btnSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSetting.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSetting.Location = new System.Drawing.Point(16, 542);
-            this.btnSetting.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSetting.Name = "btnSetting";
-            this.btnSetting.Size = new System.Drawing.Size(160, 40);
-            this.btnSetting.TabIndex = 7;
-            this.btnSetting.Text = "Settings";
-            this.btnSetting.UseVisualStyleBackColor = false;
-            this.btnSetting.MouseEnter += new System.EventHandler(this.btnSetting_MouseEnter);
-            this.btnSetting.MouseLeave += new System.EventHandler(this.btnSetting_MouseLeave);
-            // 
             // btnCheckout
             // 
             this.btnCheckout.BackColor = System.Drawing.Color.White;
@@ -117,6 +100,8 @@
             this.btnCheckout.Text = "Checkout";
             this.btnCheckout.UseVisualStyleBackColor = false;
             this.btnCheckout.Click += new System.EventHandler(this.btnCheckout_Click);
+            this.btnCheckout.MouseEnter += new System.EventHandler(this.btnCheckout_MouseEnter);
+            this.btnCheckout.MouseLeave += new System.EventHandler(this.btnCheckout_MouseLeave);
             // 
             // btnOrder
             // 
@@ -137,10 +122,10 @@
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(2, -1);
+            this.pictureBox1.Location = new System.Drawing.Point(-1, -1);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(211, 77);
+            this.pictureBox1.Size = new System.Drawing.Size(219, 82);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
@@ -213,7 +198,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnCheckout;
         private System.Windows.Forms.Button btnOrder;
-        private System.Windows.Forms.Button btnSetting;
         private System.Windows.Forms.Button btnLogout;
     }
 }

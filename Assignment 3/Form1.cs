@@ -80,16 +80,6 @@ namespace Assignment_3
             btnOrder.BackColor = Color.White;
         }
 
-        private void btnSetting_MouseEnter(object sender, EventArgs e)
-        {
-            btnSetting.BackColor = Color.Gainsboro;
-        }
-
-        private void btnSetting_MouseLeave(object sender, EventArgs e)
-        {
-            btnSetting.BackColor = Color.White;
-        }
-
         private void btnLogout_MouseEnter(object sender, EventArgs e)
         {
             btnLogout.BackColor = Color.Red;
@@ -116,5 +106,14 @@ namespace Assignment_3
 
         }
 
-}
+        private void btnCheckout_MouseEnter(object sender, EventArgs e)
+        {
+            btnCheckout.BackColor = Color.Gainsboro;
+        }
+
+        private void btnCheckout_MouseLeave(object sender, EventArgs e)
+        {
+            btnCheckout.BackColor= Color.White;
+        }
+    }
     }

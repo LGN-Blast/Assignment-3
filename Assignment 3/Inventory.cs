@@ -168,7 +168,6 @@ namespace Assignment_3
 
         private void dgvInventory_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dgvInventory.Rows[e.RowIndex];
