@@ -28,7 +28,7 @@ namespace Assignment_3
                         int id = int.Parse(parts[0]);
                         string name = parts[1];
                         string brand = parts[2];
-                        decimal price = decimal.Parse(parts[3]) / 100m;
+                        decimal price = decimal.Parse(parts[3]);
                         int quantity = int.Parse(parts[4]);
 
                         products.Add(new Product(id, name, brand, price, quantity));
@@ -49,7 +49,7 @@ namespace Assignment_3
 
                 foreach (var p in products)
                 {
-                    string line = $"{p.ProductID}, {p.ProductName},{p.ProductBrand},{p.ProductPrice * 100},{p.ProductQuantity}";
+                    string line = $"{p.ProductID},{p.ProductName},{p.ProductBrand},{p.ProductPrice},{p.ProductQuantity}";
                     writer.WriteLine(line);
                 }
             }

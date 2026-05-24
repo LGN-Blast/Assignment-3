@@ -118,7 +118,7 @@
             this.pnlHeader1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHeader1.Location = new System.Drawing.Point(0, 0);
             this.pnlHeader1.Name = "pnlHeader1";
-            this.pnlHeader1.Size = new System.Drawing.Size(1300, 100);
+            this.pnlHeader1.Size = new System.Drawing.Size(1397, 100);
             this.pnlHeader1.TabIndex = 12;
             // 
             // label4
@@ -127,7 +127,7 @@
             this.label4.Cursor = System.Windows.Forms.Cursors.Default;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(537, 27);
+            this.label4.Location = new System.Drawing.Point(554, 27);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(236, 45);
             this.label4.TabIndex = 6;
@@ -152,9 +152,9 @@
             this.grpOrder.Controls.Add(this.lblCustomer);
             this.grpOrder.Controls.Add(this.lblOrderID);
             this.grpOrder.Controls.Add(this.txtCustomer);
-            this.grpOrder.Location = new System.Drawing.Point(31, 100);
+            this.grpOrder.Location = new System.Drawing.Point(13, 115);
             this.grpOrder.Name = "grpOrder";
-            this.grpOrder.Size = new System.Drawing.Size(409, 650);
+            this.grpOrder.Size = new System.Drawing.Size(422, 605);
             this.grpOrder.TabIndex = 13;
             this.grpOrder.TabStop = false;
             // 
@@ -205,6 +205,7 @@
             this.btnSaveOrder.TabIndex = 18;
             this.btnSaveOrder.Text = "Save";
             this.btnSaveOrder.UseVisualStyleBackColor = false;
+            this.btnSaveOrder.Click += new System.EventHandler(this.btnSaveOrder_Click);
             // 
             // btnDeleteOrder
             // 
@@ -218,6 +219,7 @@
             this.btnDeleteOrder.TabIndex = 17;
             this.btnDeleteOrder.Text = "Delete";
             this.btnDeleteOrder.UseVisualStyleBackColor = false;
+            this.btnDeleteOrder.Click += new System.EventHandler(this.btnDeleteOrder_Click);
             // 
             // btnUpdateOrder
             // 
@@ -327,9 +329,9 @@
             this.grpInventory.Controls.Add(this.btnSearchOrder);
             this.grpInventory.Controls.Add(this.txtSearchOrder);
             this.grpInventory.Controls.Add(this.dgvOrders);
-            this.grpInventory.Location = new System.Drawing.Point(455, 115);
+            this.grpInventory.Location = new System.Drawing.Point(453, 115);
             this.grpInventory.Name = "grpInventory";
-            this.grpInventory.Size = new System.Drawing.Size(829, 632);
+            this.grpInventory.Size = new System.Drawing.Size(917, 606);
             this.grpInventory.TabIndex = 14;
             this.grpInventory.TabStop = false;
             // 
@@ -353,6 +355,7 @@
             this.txtSearchOrder.Name = "txtSearchOrder";
             this.txtSearchOrder.Size = new System.Drawing.Size(341, 31);
             this.txtSearchOrder.TabIndex = 21;
+            this.txtSearchOrder.TextChanged += new System.EventHandler(this.txtSearchOrder_TextChanged);
             // 
             // dgvOrders
             // 
@@ -362,8 +365,9 @@
             this.dgvOrders.Name = "dgvOrders";
             this.dgvOrders.RowHeadersWidth = 51;
             this.dgvOrders.RowTemplate.Height = 24;
-            this.dgvOrders.Size = new System.Drawing.Size(829, 537);
+            this.dgvOrders.Size = new System.Drawing.Size(917, 560);
             this.dgvOrders.TabIndex = 0;
+            this.dgvOrders.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrders_CellClick);
             // 
             // Order_Page
             // 
@@ -381,7 +385,7 @@
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Name = "Order_Page";
-            this.Size = new System.Drawing.Size(1300, 750);
+            this.Size = new System.Drawing.Size(1397, 750);
             this.pnlHeader1.ResumeLayout(false);
             this.pnlHeader1.PerformLayout();
             this.grpOrder.ResumeLayout(false);

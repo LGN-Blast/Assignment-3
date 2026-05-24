@@ -196,6 +196,7 @@ namespace Assignment_3
 
             dgvInventory.DataSource = filteredList;
         }
+
     }
 
 }
