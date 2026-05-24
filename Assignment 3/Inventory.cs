@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
-using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace Assignment_3
 {
@@ -11,7 +12,7 @@ namespace Assignment_3
     {
         private BindingList<Product> _inventorylist = new BindingList<Product>();
         private BindingSource _bindingSource = new BindingSource();
-        string filepath = "C:/Ishan Coding/Assignment3+/Assignment 3/Products.csv";
+        string filepath = Path.Combine(Application.StartupPath, "Products.csv");
         public Inventory()
         {
             InitializeComponent();
@@ -33,6 +34,8 @@ namespace Assignment_3
             _bindingSource.ResetBindings(false);
 
             ClearFields();
+
+
         }
 
         private void Inventory_Load(object sender, EventArgs e)
@@ -45,7 +48,9 @@ namespace Assignment_3
                 _inventorylist.Add(item);
             }
 
-            dgvInventory.DataSource = _inventorylist;
+            _bindingSource.DataSource = _inventorylist;
+            dgvInventory.DataSource = _bindingSource;
+
             dgvInventory.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvInventory.MultiSelect = false;
         }
@@ -190,10 +195,6 @@ namespace Assignment_3
                 .ToList();
 
             dgvInventory.DataSource = filteredList;
-        }
-        public DataGridView InventoryGrid
-        {
-            get { return dgvInventory; }
         }
     }
 

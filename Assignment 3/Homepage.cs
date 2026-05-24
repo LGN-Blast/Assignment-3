@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,9 @@ namespace Assignment_3
 {
     public partial class Dashboard : UserControl
     {
+        private List<Product> _inventorylist = new List<Product>();
+        string filepath = Path.Combine(Application.StartupPath, "Products.csv");
+
         public Dashboard()
         {
             InitializeComponent();
@@ -26,40 +30,12 @@ namespace Assignment_3
         private void Dashboard_Load(object sender, EventArgs e)
         {
             dashTimer.Start();
-            UpdateDashboard();
 
             lblTime.Text = DateTime.Now.ToString("hh:mm:ss tt");
             lblDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
+
+            _inventorylist = InventoryService.LoadFromCSV(filepath);
         }
-
-        private void UpdateDashboard()
-        {
-            int totalInventory = 0;
-            int lowStockAlerts = 0;
-
-            Inventory inventory = new Inventory();
-            inventory.Refresh();
-
-            foreach(DataGridViewRow row in inventory.InventoryGrid.Rows)
-            {
-                if (row.Cells["Quantity"].Value !=null)
-                {
-                    int productQuantity;
-
-                    if (int.TryParse(row.Cells["Quantity"].Value.ToString(), out productQuantity))
-                    {
-                        totalInventory += productQuantity;
-
-                        if (productQuantity < 10)
-                        {
-                            lowStockAlerts++;
-                        }
-                    }
-                }
-            }
-
-            lblTotalInventory.Text = totalInventory.ToString();
-            lblLowStock.Text = lowStockAlerts.ToString();
-        }
+        
     }
 }

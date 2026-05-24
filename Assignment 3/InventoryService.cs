@@ -19,10 +19,9 @@ namespace Assignment_3
 
             foreach (string line in lines)
             {
-                string[] parts = line.Split(',');
+                string[] parts = line.Split(',').Select(p=> p.Trim()).ToArray();
 
-
-                if (parts.Length >= 4)
+                if (parts.Length >= 5)
                 {
                     try
                     {
@@ -30,13 +29,13 @@ namespace Assignment_3
                         string name = parts[1];
                         string brand = parts[2];
                         decimal price = decimal.Parse(parts[3]) / 100m;
-                        int quantity = 0;
+                        int quantity = int.Parse(parts[4]);
 
                         products.Add(new Product(id, name, brand, price, quantity));
                     }
-                    catch
+                    catch (Exception ex) 
                     {
-
+                        System.Diagnostics.Debug.WriteLine($"Skipping bad row: {line} | {ex.Message}");
                     }
                 }
             }
@@ -50,7 +49,7 @@ namespace Assignment_3
 
                 foreach (var p in products)
                 {
-                    string line = $"{p.ProductID},{p.ProductName},{p.ProductBrand},{p.ProductPrice * 100},{p.ProductQuantity}";
+                    string line = $"{p.ProductID}, {p.ProductName},{p.ProductBrand},{p.ProductPrice * 100},{p.ProductQuantity}";
                     writer.WriteLine(line);
                 }
             }
