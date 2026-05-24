@@ -109,6 +109,8 @@
     <Compile Include="Order-Page.Designer.cs">
       <DependentUpon>Order-Page.cs</DependentUpon>
     </Compile>
+    <Compile Include="Order.cs" />
+    <Compile Include="OrderServicecs.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
