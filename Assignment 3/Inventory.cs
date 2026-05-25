@@ -34,8 +34,6 @@ namespace Assignment_3
             _bindingSource.ResetBindings(false);
 
             ClearFields();
-
-
         }
 
         private void Inventory_Load(object sender, EventArgs e)

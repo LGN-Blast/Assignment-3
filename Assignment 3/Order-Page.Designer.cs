@@ -152,9 +152,9 @@
             this.grpOrder.Controls.Add(this.lblCustomer);
             this.grpOrder.Controls.Add(this.lblOrderID);
             this.grpOrder.Controls.Add(this.txtCustomer);
-            this.grpOrder.Location = new System.Drawing.Point(13, 115);
+            this.grpOrder.Location = new System.Drawing.Point(20, 120);
             this.grpOrder.Name = "grpOrder";
-            this.grpOrder.Size = new System.Drawing.Size(422, 605);
+            this.grpOrder.Size = new System.Drawing.Size(399, 583);
             this.grpOrder.TabIndex = 13;
             this.grpOrder.TabStop = false;
             // 
@@ -299,7 +299,7 @@
             // 
             this.lblCustomer.AutoSize = true;
             this.lblCustomer.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustomer.Location = new System.Drawing.Point(6, 150);
+            this.lblCustomer.Location = new System.Drawing.Point(0, 148);
             this.lblCustomer.Name = "lblCustomer";
             this.lblCustomer.Size = new System.Drawing.Size(117, 31);
             this.lblCustomer.TabIndex = 8;
@@ -318,7 +318,7 @@
             // txtCustomer
             // 
             this.txtCustomer.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCustomer.Location = new System.Drawing.Point(120, 150);
+            this.txtCustomer.Location = new System.Drawing.Point(120, 148);
             this.txtCustomer.Name = "txtCustomer";
             this.txtCustomer.Size = new System.Drawing.Size(220, 31);
             this.txtCustomer.TabIndex = 5;
@@ -331,7 +331,7 @@
             this.grpInventory.Controls.Add(this.dgvOrders);
             this.grpInventory.Location = new System.Drawing.Point(453, 115);
             this.grpInventory.Name = "grpInventory";
-            this.grpInventory.Size = new System.Drawing.Size(917, 606);
+            this.grpInventory.Size = new System.Drawing.Size(820, 588);
             this.grpInventory.TabIndex = 14;
             this.grpInventory.TabStop = false;
             // 
@@ -365,7 +365,7 @@
             this.dgvOrders.Name = "dgvOrders";
             this.dgvOrders.RowHeadersWidth = 51;
             this.dgvOrders.RowTemplate.Height = 24;
-            this.dgvOrders.Size = new System.Drawing.Size(917, 560);
+            this.dgvOrders.Size = new System.Drawing.Size(817, 542);
             this.dgvOrders.TabIndex = 0;
             this.dgvOrders.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrders_CellClick);
             // 

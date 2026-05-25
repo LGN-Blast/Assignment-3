@@ -39,24 +39,31 @@
             this.lblLowStock = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lblTotalRevenue = new System.Windows.Forms.Label();
+            this.lblTotalStockValue = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.lblTime = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dashTimer = new System.Windows.Forms.Timer(this.components);
+            this.grpInventory = new System.Windows.Forms.GroupBox();
+            this.btnSearchOrder = new System.Windows.Forms.Button();
+            this.txtSearchHome = new System.Windows.Forms.TextBox();
+            this.dgvHomepage = new System.Windows.Forms.DataGridView();
             this.pnlMain.SuspendLayout();
             this.flowCards.SuspendLayout();
             this.pnlTotalInv.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlHeader.SuspendLayout();
+            this.grpInventory.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHomepage)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlMain
             // 
             this.pnlMain.BackColor = System.Drawing.Color.White;
+            this.pnlMain.Controls.Add(this.grpInventory);
             this.pnlMain.Controls.Add(this.flowCards);
             this.pnlMain.Controls.Add(this.pnlHeader);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -71,7 +78,7 @@
             this.flowCards.Controls.Add(this.pnlTotalInv);
             this.flowCards.Controls.Add(this.panel1);
             this.flowCards.Controls.Add(this.panel2);
-            this.flowCards.Location = new System.Drawing.Point(21, 106);
+            this.flowCards.Location = new System.Drawing.Point(0, 106);
             this.flowCards.Name = "flowCards";
             this.flowCards.Size = new System.Drawing.Size(1283, 99);
             this.flowCards.TabIndex = 1;
@@ -102,7 +109,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(144, 9);
+            this.label8.Location = new System.Drawing.Point(151, 9);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(117, 20);
             this.label8.TabIndex = 0;
@@ -133,42 +140,42 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(173, 9);
+            this.label7.Location = new System.Drawing.Point(146, 9);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(80, 20);
+            this.label7.Size = new System.Drawing.Size(126, 20);
             this.label7.TabIndex = 0;
-            this.label7.Text = "Low Stock";
+            this.label7.Text = "Low Stock Alerts";
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.lblTotalRevenue);
+            this.panel2.Controls.Add(this.lblTotalStockValue);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Location = new System.Drawing.Point(859, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(421, 90);
             this.panel2.TabIndex = 3;
             // 
-            // lblTotalRevenue
+            // lblTotalStockValue
             // 
-            this.lblTotalRevenue.AutoSize = true;
-            this.lblTotalRevenue.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalRevenue.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lblTotalRevenue.Location = new System.Drawing.Point(189, 39);
-            this.lblTotalRevenue.Name = "lblTotalRevenue";
-            this.lblTotalRevenue.Size = new System.Drawing.Size(35, 41);
-            this.lblTotalRevenue.TabIndex = 1;
-            this.lblTotalRevenue.Text = "0";
+            this.lblTotalStockValue.AutoSize = true;
+            this.lblTotalStockValue.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalStockValue.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.lblTotalStockValue.Location = new System.Drawing.Point(189, 39);
+            this.lblTotalStockValue.Name = "lblTotalStockValue";
+            this.lblTotalStockValue.Size = new System.Drawing.Size(35, 41);
+            this.lblTotalStockValue.TabIndex = 1;
+            this.lblTotalStockValue.Text = "0";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(157, 9);
+            this.label9.Location = new System.Drawing.Point(165, 9);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(108, 20);
+            this.label9.Size = new System.Drawing.Size(128, 20);
             this.label9.TabIndex = 0;
-            this.label9.Text = "Total Revenue";
+            this.label9.Text = "Total Stock Value";
             // 
             // pnlHeader
             // 
@@ -223,6 +230,51 @@
             this.dashTimer.Interval = 1000;
             this.dashTimer.Tick += new System.EventHandler(this.dashTimer_Tick);
             // 
+            // grpInventory
+            // 
+            this.grpInventory.BackColor = System.Drawing.Color.White;
+            this.grpInventory.Controls.Add(this.btnSearchOrder);
+            this.grpInventory.Controls.Add(this.txtSearchHome);
+            this.grpInventory.Controls.Add(this.dgvHomepage);
+            this.grpInventory.Location = new System.Drawing.Point(29, 249);
+            this.grpInventory.Name = "grpInventory";
+            this.grpInventory.Size = new System.Drawing.Size(1217, 567);
+            this.grpInventory.TabIndex = 15;
+            this.grpInventory.TabStop = false;
+            // 
+            // btnSearchOrder
+            // 
+            this.btnSearchOrder.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnSearchOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchOrder.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchOrder.ForeColor = System.Drawing.Color.White;
+            this.btnSearchOrder.Location = new System.Drawing.Point(0, 5);
+            this.btnSearchOrder.Name = "btnSearchOrder";
+            this.btnSearchOrder.Size = new System.Drawing.Size(120, 38);
+            this.btnSearchOrder.TabIndex = 21;
+            this.btnSearchOrder.Text = "Search";
+            this.btnSearchOrder.UseVisualStyleBackColor = false;
+            // 
+            // txtSearchHome
+            // 
+            this.txtSearchHome.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchHome.Location = new System.Drawing.Point(126, 9);
+            this.txtSearchHome.Name = "txtSearchHome";
+            this.txtSearchHome.Size = new System.Drawing.Size(341, 31);
+            this.txtSearchHome.TabIndex = 21;
+            this.txtSearchHome.TextChanged += new System.EventHandler(this.txtSearchHome_TextChanged);
+            // 
+            // dgvHomepage
+            // 
+            this.dgvHomepage.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvHomepage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHomepage.Location = new System.Drawing.Point(0, 46);
+            this.dgvHomepage.Name = "dgvHomepage";
+            this.dgvHomepage.RowHeadersWidth = 51;
+            this.dgvHomepage.RowTemplate.Height = 24;
+            this.dgvHomepage.Size = new System.Drawing.Size(1217, 515);
+            this.dgvHomepage.TabIndex = 0;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -242,6 +294,9 @@
             this.panel2.PerformLayout();
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();
+            this.grpInventory.ResumeLayout(false);
+            this.grpInventory.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHomepage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -262,7 +317,11 @@
         private System.Windows.Forms.Label lblLowStock;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label lblTotalRevenue;
+        private System.Windows.Forms.Label lblTotalStockValue;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.GroupBox grpInventory;
+        private System.Windows.Forms.Button btnSearchOrder;
+        private System.Windows.Forms.TextBox txtSearchHome;
+        public System.Windows.Forms.DataGridView dgvHomepage;
     }
 }
