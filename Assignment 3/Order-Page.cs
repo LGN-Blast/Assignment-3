@@ -228,10 +228,6 @@ namespace Assignment_3
         private decimal GetProductPrice(string productName)
         {
             var products = InventoryService.LoadFromCSV(filepath);
-
-            System.Diagnostics.Debug.WriteLine($"Looking for: '{productName}'");
-            System.Diagnostics.Debug.WriteLine($"First product name: '{products[0].ProductName}'");
-
             var match = products.FirstOrDefault(p => p.ProductName == productName);
             return match != null ? match.ProductPrice : 0m;
         }
